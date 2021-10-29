@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sijavica-homepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Economica:wght@400;700&family=Fjalla+One&display=swap" rel="stylesheet">
+    <title>Šijavica</title>
+</head>
+<body>
+
+<!--MENU-->
+<!--music-->
+<audio autoplay loop >
+<source src="./glazba/sijavica_mp3.mp3" type="audio/mpeg">
+<source src="./glazba/sijavica_ogg.ogg" type="audio/ogg">
+</audio>
+<div class="audio-toggler-div">
+    <img src="./slike/other/sound-on.png" alt="sound-icon" class="sound-icon sound-on" width="40px">
+</div>
+<div class="music-choice music-choice-hidden">
+    <div class="music-question">Want to hear some awesome music in the background?</div>
+    <div class="music-answers">
+        <div class="music-answer answer-yes">Absolutely!</div>
+        <div class="music-answer answer-no">Silence is my alter ego</div>
+    </div>
+</div> 
+<!--background elements and options-->
+<div class="main-div">
+    <div class="title">
+        <h1>ŠIJAVICA</h1>
+        <img src="./slike/background/donkey.png" alt="donkey" class="donkey">
+    </div>
+    <div class="player-info">
+        <div class="pick-name">player name:</div>
+        <input type="text" name="playerName" id="player-name" class="player-name" maxlength="15">
+    </div>
+    <div class="options-btns">
+        <button class="instructions-btn btn">Instructions</button>
+        <button class="avatar-btn btn">Choose your avatar</button>
+        <a class="play-btn btn" href="./sijavica.html">PLAY</a>
+    </div>
+</div>
+
+<!--INSTRUCTIONS-->
+<div class="instructions-div menu-option-div menu-option-div-hidden">
+    <h2 class="instructions-title">instructions</h2>
+    <div class="instructions-content">
+        <p class="instructions-text" id="p1">
+            Šijavica (šije-šete) is an traditional game for two players. In its present form, 
+            it is known from ancient Rome under the name <i>micatio</i> (roughly meaning "speeding fingers"), 
+            from which it further spread to the entire Mediterranean. In Croatia, the game is widespread in Istria, the Kvarner coast and Dalmatia.
+        </p>
+        <p class="instructions-text p-hidden" id="p2">
+            Players simultaneously "throw" or point out the outstretched fingers of one hand 
+            and try to guess the sum of the fingers shown, simultaneously calling a number ranging from 2 to 10. 
+            Modified Italian numbers, e.g. "šije", "šete" (sei, sette) are shouted, and the name of the game is derived from them. 
+            The game is played up to a pre-agreed number of points. 
+            Although the game has elements of luck, the skill of the player comes to the fore.
+        </p>
+        <p class="instructions-text p-hidden" id="p3">
+            You will play against computer Rodijak. First, on your keyboard press number for number of fingers you want to throw and afterwards, number 
+            to guess the sum of the fingers shown. A throw is considered unsuccessful if no player has hit the sum of the outstretched fingers. 
+            If they both hit, the draw counts. If only one player hits, he wins one point. The game is played up to 10 points. 
+        </p>
+        <p class="instructions-text p-hidden" id="p4">
+            To make it even more simple:<br>
+            - For number 10, press 0.<br>
+            - If you throw number less than minimum value (1 for first, 2 for second number) or bigger than maximum value (5 for first, 10 for second mumber)
+            - or your second number has value equal or less than value of first number<br><br>
+            we'll fix it for you.
+        </p>
+    </div>
+    <div class="arrow-back-div arrow-back-div-instructions arrow-back-div-instructions-hidden">
+        <img src="./slike/other/arrow-back.png" alt="arrow-back" class="arrow-back arrow-back-instructions">
+    </div>
+    <div class="next-btn-div">
+        <button class="next-btn btn">Next</button>
+        <button class="got-it-btn got-it-btn-hidden btn">Got it!</button>
+    </div>
+</div>
+
+<!--CHOOSE AVATAR-->
+<div class="select-avatar-div menu-option-div-hidden menu-option-div">
+    <h2 class="choose-avatar-title">Choose your avatar</h2>
+    <div class="avatars-div">
+        <div class="avatar-container">
+            <img src="./slike/slike avatars/sokol.png" alt="Sivi sokol" class="avatar-img" id="sokol">
+            <h3 class="avatar-name">Sivi sokol</h3>
+        </div>
+        <div class="avatar-container">
+            <img src="./slike/slike avatars/babaroga.png" alt="Babaroga" class="avatar-img" id="babaroga">
+            <h3 class="avatar-name">Babaroga</h3>
+        </div>
+        <div class="avatar-container">
+            <img src="./slike/slike avatars/guja.png" alt="Ljuta guja" class="avatar-img" id="guja">
+            <h3 class="avatar-name">Ljuta guja</h3>
+        </div>
+        <div class="avatar-container">
+            <img src="./slike/slike avatars/vukojarac.png" alt="Vukojarac" class="avatar-img" id="vukojarac">
+            <h3 class="avatar-name">Vukojarac</h3>
+        </div>
+        <div class="avatar-container">
+            <img src="./slike/slike avatars/vrtirepka.png" alt="Vrtirepka" class="avatar-img" id="vrtirepka">
+            <h3 class="avatar-name">Vrtirepka</h3>
+        </div>
+        <div class="avatar-container">
+            <img src="./slike/slike avatars/promaja.png" alt="Promaja" class="avatar-img" id="promaja">
+            <h3 class="avatar-name">Promaja</h3>
+        </div>
+    </div>
+    <div class="options-avatar-div">
+        <div class="arrow-back-div">
+            <img src="./slike/other/arrow-back.png" alt="arrow-back" class="arrow-back arrow-back-avatars">
+        </div>
+        <div class="play-btn-div">
+            <a class="play-btn btn" href="./sijavica.html">PLAY</a>
+        </div>
+    </div>
+</div>
+
+<!--JAVASCRIPT-->
+<script src="./sijavica .js"></script>
+</body>
+</html>

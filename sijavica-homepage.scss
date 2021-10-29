@@ -1,0 +1,600 @@
+//VARIABLES AND MIXINS
+$dark-border: rgb(37, 37, 37) solid 2px;
+$dark-outline: rgba(36, 36, 36, 0.671) solid 2000px;
+$scale-btn: scale(1.05);
+
+@mixin btn-mixin {
+    cursor: pointer;
+    &:hover{
+        transform: $scale-btn;
+    }
+}
+
+@mixin green-btn{
+    background-color: limegreen;
+    &:hover{
+        background-color: rgb(14, 194, 14);
+    }
+}
+
+@mixin uppercase {
+    font-family: 'Economica', sans-serif;
+    text-transform: uppercase;
+}
+
+@mixin hidden {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: Zorque;
+    src: url(./fonts/zorque/zorque.otf);
+}
+
+//PAGE
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgb(241, 173, 96),rgb(243, 160, 64));
+}
+//music-yes or no?
+.sound-icon{
+    position: fixed;
+    top: 1vw;
+    left: 1vw;
+    width: 3vw;
+    @include btn-mixin();
+}
+.music-choice{
+    position: absolute;
+    top: 37vh;
+    left: 36vw;
+    width: 28vw;
+    padding: 1rem;
+    @include uppercase();
+    text-align: center;
+    font-size: 1.8rem;
+    border: $dark-border;
+    border-radius: 1rem;
+    outline: $dark-outline;
+    background-color: rgb(241, 173, 96);
+    z-index: 5;
+}
+.music-choice-hidden{
+    @include hidden();
+}
+.music-answers{
+    display: flex;
+    padding-top: 2.7rem;
+    justify-content: space-evenly;
+}
+.music-answer{
+    font-size: 1.3rem;
+    padding: 0.2rem;
+    border: $dark-border;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.answer-yes{
+@include green-btn()
+}
+.answer-no{
+    &:hover{
+        background-color: rgb(241, 223, 190);
+    }
+}
+
+//main page
+.title{
+    transform-origin: top left;
+    padding-top: 15vh;
+    font-size: 8vh;
+    text-align: center;
+    font-family: 'Zorque';  
+}
+.donkey{
+    position: absolute;
+    width: 25vw;
+    bottom: 0;
+    right: 0;
+}
+.options-btns, .player-info{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 30vw;
+    margin: 5vh auto 0;  
+}
+.btn{
+    margin-bottom: 3vh ;
+    background-color: rgb(238, 223, 192);
+    &:hover{
+        background-color: rgb(243, 212, 155);
+    }
+    cursor: pointer;
+}
+.btn, .pick-name, .player-name{
+    width: 17vw;
+    padding: 0.3vh;
+    @include uppercase();
+    font-size: 2vw;
+    text-align: center;  
+    font-weight: 700;
+    border-radius: 2vh;
+    border:$dark-border;
+}
+.pick-name{
+    border: none;
+}
+.player-name{
+    @include uppercase();
+    font-weight: 400;
+    background-color: rgb(250, 241, 225);
+}
+.play-btn{
+    width: 8vw;
+    height: 8vh;
+    line-height: 5vh;
+    margin-top: 1vh;
+    padding: 1vh;
+    text-decoration: none;
+    color: black;
+    @include btn-mixin();
+    @include green-btn();
+}
+.arrow-back{
+    cursor: pointer;
+}
+
+//instructions
+.instructions-title{
+    padding-top: 1rem;
+}
+.instructions-div{
+    position: relative;
+    .arrow-back-div{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+.instructions-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25vw;
+    height: 70%;
+    margin: auto;
+}
+.instructions-text{
+    font-size: 1.4rem;
+    text-align: justify;
+}
+.p-hidden{
+    @include hidden();
+}
+.next-btn-div{
+    position: relative;
+    bottom: 0;
+    left: 50%;
+}
+.next-btn, .got-it-btn{
+    position: absolute;
+    left: -2.5rem;
+    font-size: 1.5rem;
+    width: 5rem;
+    border-radius: 0.8rem;
+    border:$dark-border;
+    @include btn-mixin();
+    @include green-btn();
+}
+.next-btn-hidden{
+    @include hidden();
+}
+.got-it-btn-hidden{
+    @include hidden();
+}
+.arrow-back-instructions{
+    position: relative;
+    bottom: 1vh;
+}
+.arrow-back-div-instructions-hidden{
+    @include hidden();
+}
+
+//avatars
+.menu-option-div{
+    position: fixed;
+    top: 33vh;
+    left: 34vw;
+    width: 32vw;
+    height: 55vh;
+    padding-top: 2vh;
+    border-radius: 2rem;
+    background: linear-gradient(rgb(247, 235, 210),rgb(243, 212, 155));
+    text-align: center;
+    font-family: 'Economica', sans-serif;
+    outline: $dark-outline;
+    h2{
+        text-transform: uppercase;
+        padding-bottom: 1vh;
+    }
+}
+.menu-option-div-hidden{
+    @include hidden();
+}
+.avatars-div{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.avatar-container{
+    cursor: pointer;
+    flex-basis: 26%;
+    border: rgb(75, 75, 75) solid 3px;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 0.2rem;
+    &:hover{
+        background-color: rgb(96, 207, 96);
+    }
+}
+.avatar-container-clicked{
+    background-color: rgb(96, 207, 96);
+    border: rgb(32, 32, 32) solid 3px;
+    animation: avatarClicked 0.03s linear 1 forwards;
+}
+.avatar-img{
+    width: 6vw; 
+}
+.arrow-back-div{
+    margin: 1.3vh 4vh 0;
+    position: absolute;
+    left: 1vw;
+    transform: scale(0.7);
+    &:hover{
+        transform: scale(0.75);   
+    }
+}
+.options-avatar-div{
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.play-btn-div{
+    width: 8vw;
+    height: 8vh;
+    display: flex;
+    .play-btn{
+        margin-top: 0;    
+    }
+}
+
+//ANIMATIONS
+//avatar container clicked
+@keyframes avatarClicked {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
+
+//MEDIA QUERIES
+@media (max-width: 1350px) {
+    .menu-option-div{
+        left: 32vw;
+        width: 36vw;
+    }
+    .instructions-content{
+        width: 30vw;
+    }
+    .avatar-container{
+        flex-basis: 28%;
+    }
+    .avatar-img{
+        width: 6vw; 
+    }
+}
+
+@media (max-width: 1200px) {
+    .music-choice{
+        left: 34vw;
+        width: 32vw;
+    }
+    .instructions-text{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .menu-option-div{
+        left: 31vw;
+        width: 38vw;
+    }
+    .btn, .pick-name, .player-name{
+        width: 22vw;
+        font-size: 2.6vw;
+    }
+    .instructions-title{
+        padding-top: 0.6rem;
+    }
+    .instructions-content{
+        width: 33vw;
+    }
+    .play-btn{
+        width: 10vw;
+    }
+    .sound-icon{
+        width: 3.5vw;
+    }
+    .avatar-container{
+        flex-basis: 30%;
+    }
+    .avatar-img{
+        width: 7vw; 
+    }
+    .next-btn, .got-it-btn{
+        font-size: 1.5rem;
+        width: 5rem;
+    }
+    .music-choice{
+        left: 32vw;
+        width: 36vw;
+    }  
+}
+
+@media (max-width: 950px) {
+    .menu-option-div{
+        left: 27vw;
+        width: 46vw;
+    }
+    .instructions-content{
+        width: 40vw;
+    }
+    .btn, .pick-name, .player-name{
+        width: 25vw;
+        font-size: 3vw;
+    }
+    .next-btn, .got-it-btn{
+        font-size: 1.5rem;
+        width: 5rem;
+    }
+    .play-btn{
+        width: 13vw;
+    }
+    .play-btn-div{
+        width: 13vw; 
+    }
+    .sound-icon{
+        width: 4vw;
+    }
+    .music-choice{
+        left: 28vw;
+        width: 44vw;
+        font-size: 1.6rem;
+    }
+    .avatar-img{
+        width: 8vw; 
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-option-div{
+        left: 25vw;
+        width: 50vw;
+    }
+    .instructions-content{
+        width: 44vw;
+    }
+    .btn, .pick-name, .player-name{
+        width: 30vw;
+        font-size: 3.5vw;
+    }
+    .next-btn, .got-it-btn{
+        font-size: 1.5rem;
+        width: 5rem;
+    }
+    .play-btn{
+        width: 15vw;
+    }
+    .play-btn-div{
+       width: 15vw; 
+    }
+    .sound-icon{
+        width: 5vw;
+    }
+    .music-choice{
+        left: 25vw;
+        width: 50vw;
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 650px) {
+    .menu-option-div{
+        left: 20vw;
+        width: 60vw;
+    }
+    .instructions-content{
+        width: 55vw;
+    }
+    .btn, .pick-name, .player-name{
+        width: 35vw;
+        font-size: 3.7vw;
+    }
+    .play-btn{
+        width: 17vw;
+    }
+    .play-btn-div{
+        width: 17vw; 
+    }
+    .sound-icon{
+        width: 5.5vw;
+    }
+    .title{
+        font-size: 7vh;
+    }
+    .music-choice{
+        left: 20vw;
+        width: 60vw;
+        font-size: 1.5rem;
+    }
+    .music-answer{
+        font-size: 1.3rem;
+    }
+    .next-btn, .got-it-btn{
+        font-size: 1.5rem;
+        width: 5rem;
+    }
+    .avatar-img{
+        width: 10vw; 
+    }
+}
+
+@media (max-width: 550px) {
+    .menu-option-div{
+        left: 13vw;
+        width: 74vw;
+    }
+    .instructions-content{
+        width: 67vw;
+    }
+    .btn, .pick-name, .player-name{
+        width: 40vw;
+        font-size: 4vw;
+        border-radius: 1.7vh;
+    }
+    .play-btn{
+        width: 20vw;
+    }
+    .play-btn-div{
+        width: 20vw; 
+    }
+    .next-btn, .got-it-btn{
+        font-size: 1.5rem;
+        width: 5rem;
+    }
+    .sound-icon{
+        width: 6vw;
+    }
+    .title{
+        font-size: 7vh;
+    }
+    .avatar-img{
+        width: 12vw; 
+    }
+    .music-choice{
+        left: 15vw;
+        width: 70vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-option-div{
+        left: 2vw;
+        width: 96vw;
+    }
+    .instructions-content{
+        width: 93vw;
+    }
+    .btn, .pick-name, .player-name{
+        width: 50vw;
+        font-size: 5vw;
+        border-radius: 1.5vh;
+    }
+    .play-btn{
+        width: 25vw;
+    }
+    .play-btn-div{
+        width: 25vw;
+    }
+    .next-btn, .got-it-btn{
+        font-size: 1.5rem;
+        width: 5rem;
+    }
+    .sound-icon{
+        width: 7vw;
+    }
+    .title{
+        font-size: 6vh;
+    }
+    .music-choice{
+        left: 6vw;
+        width: 88vw;
+        font-size: 1.4rem;
+    }
+    .music-answer{
+        font-size: 1.2rem;
+    }
+    .avatar-img{
+        width: 14vw; 
+    }
+}
+
+@media (max-width: 350px) {
+    .menu-option-div{
+        left: 5vw;
+        width: 90vw;
+    }
+    .instructions-content{
+        width: 84vw;
+    }
+    .instructions-text{
+        font-size: 1.1rem;
+    }
+    .btn, .pick-name, .player-name{
+        width: 58vw;
+        font-size: 6vw;
+        border-radius: 1.5vh;
+    }
+    .play-btn{
+        width: 27vw;
+    }
+    .play-btn-div{
+        width: 27vw;
+    }
+    .sound-icon{
+        width: 7.5vw;
+    }
+    .title{
+        font-size: 5vh;
+    }
+    .music-choice{
+        left: 3vw;
+        width: 94vw;
+        font-size: 1.2rem;
+    }
+    .music-answer{
+        font-size: 1rem;
+    }
+    .next-btn-div{
+        width: 100%;
+    }
+    .next-btn, .got-it-btn{
+        font-size: 1.3rem;
+        width: 5rem;
+    }
+    .avatar-img{
+        width: 17vw; 
+    }
+}
+
+
+
+
