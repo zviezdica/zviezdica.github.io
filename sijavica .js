@@ -271,7 +271,6 @@ const strictRangeNum = (e) =>{
         let pressed = target.value;
         target.value = pressed.slice(0,1);
         playerGuessSum.value = pressed.slice(1,2);
-        console.log(playerGuessSum.value);
     }
     //if fingers<min or max<fingers
     target.value>max ? target.value = max : target.value;
