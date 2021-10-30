@@ -187,7 +187,7 @@ avatarContainers.forEach((avatarContainer) =>{
         avatarContainer.classList.add("avatar-container-clicked");
         let avatarId = avatarContainer.querySelector(".avatar-img").getAttribute("id");
         //for using avatar in šijavica game
-        selectedAvatarImgSrc = "../sijavica-homepage/slike/slike avatars/" + avatarId + ".png";
+        selectedAvatarImgSrc = "./slike/slike avatars/" + avatarId + ".png";
         localStorage.setItem("selectedAvatarImgSrc", selectedAvatarImgSrc);
     });
 })
