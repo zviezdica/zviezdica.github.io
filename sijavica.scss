@@ -65,7 +65,7 @@ main{
     background-color: none;
 }
 .max-points{
-    width: 8rem;
+    width: 5rem;
     height: 4rem;
     font-size: 2.5em;
     padding-left: 0;
@@ -135,9 +135,9 @@ section{
     @include economica();
     border-radius: 2rem;
     outline: rgba(36, 36, 36, 0.671) solid 2000px;
-    h1{
-        font-size: 4rem;
-    }
+}
+.result-message{
+    font-size: 4rem;
 }
 .lace-container{
     display: flex;
@@ -148,7 +148,6 @@ section{
     top: -60%;
 }
 .victory{
-    //background-color: rgb(9, 173, 9);
     background-color: limegreen;
 }
 .defeat{
@@ -252,6 +251,9 @@ section{
     .fingers-img{
         width: 400px;
     }
+    .result-message-div{
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 1100px) {
@@ -263,6 +265,15 @@ section{
     }
     .max-points{
         margin: 0.8rem 5rem 0;
+    }
+    .result-message{
+        font-size: 3.3rem;
+    }
+    .play-again-btn{
+        width: 120px;
+        height: 40px;
+        margin-top: 3vh;
+        font-size: 1.15rem;
     }
 }
 
@@ -317,6 +328,10 @@ section{
     .max-points{
         margin: 0.8rem 2.8rem 0;
     }
+    .result-message-div{
+        left: 20vw;
+        width: 60vw;
+    }
 }
 
 @media (max-width: 600px) {
@@ -357,6 +372,7 @@ section{
     .max-points{
         margin: 0.8rem 0.6rem 0;
         font-size: 1.8em;
+        width: 4rem;
     }
     .fingers-img{
         width: 120px;
@@ -367,6 +383,10 @@ section{
     }
     .input{
         font-size: 1.6rem;
+    }
+    .result-message-div{
+        left: 10vw;
+        width: 80vw;
     }
 }
 

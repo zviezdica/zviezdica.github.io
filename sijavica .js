@@ -187,7 +187,7 @@ avatarContainers.forEach((avatarContainer) =>{
         avatarContainer.classList.add("avatar-container-clicked");
         let avatarId = avatarContainer.querySelector(".avatar-img").getAttribute("id");
         //for using avatar in šijavica game
-        selectedAvatarImgSrc = "./slike/slike avatars/" + avatarId + ".png";
+        selectedAvatarImgSrc = "../sijavica-homepage/slike/slike avatars/" + avatarId + ".png";
         localStorage.setItem("selectedAvatarImgSrc", selectedAvatarImgSrc);
     });
 })
@@ -234,7 +234,7 @@ const playerFingersImg = document.querySelector(".player-fingers-img");
 const computerFingersImg = document.querySelector(".computer-fingers-img");
 const playerResultDiv = document.querySelector(".player-result");
 const computerResultDiv = document.querySelector(".computer-result");
-let playerResult = 0;
+let playerResult = 9;
 let computerResult = 0;
 
 //if šijavica game page
@@ -253,7 +253,7 @@ const showPlayerInfo = () =>{
     playerNamePlaceholder.innerText = playerName;
     //if player doesn't add player name
     if (!playerName || playerName.trim()===""){
-        playerNamePlaceholder.innerText="Anonymus";
+        playerNamePlaceholder.innerText="Incognito";
     }
 }
 
