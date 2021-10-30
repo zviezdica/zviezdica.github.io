@@ -234,7 +234,7 @@ const playerFingersImg = document.querySelector(".player-fingers-img");
 const computerFingersImg = document.querySelector(".computer-fingers-img");
 const playerResultDiv = document.querySelector(".player-result");
 const computerResultDiv = document.querySelector(".computer-result");
-let playerResult = 9;
+let playerResult = 0;
 let computerResult = 0;
 
 //if šijavica game page
